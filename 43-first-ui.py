@@ -15,11 +15,30 @@ picture = [
 #         print(' ') if y == 0 else print('*')
 
 # theirs
-for row in picture:
-    for pixel in row:
-        if pixel == 1:
-            print('*', end='')
+
+def show_tree(fill, empty, picture):
+    for row in picture:
+        for pixel in row:
+            if pixel:  # if pixel == 1:
+                print(fill, end='')
+            else:
+                print(empty, end='')
         else:
-            print(' ', end='')
-    else:
-        print('')
+            print('')
+
+
+fill = '*'
+empty = ' '
+
+show_tree(fill, empty, picture)
+show_tree(fill, empty, picture)
+
+#
+# for row in picture:
+#     for pixel in row:
+#         if pixel: # if pixel == 1:
+#             print(fill, end='')
+#         else:
+#             print(empty, end='')
+#     else:
+#         print('')
