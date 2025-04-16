@@ -1,9 +1,5 @@
-# Object-Oriented Programming
-# Polymorphism
 
 class User(object):
-    def __init__(self, email):
-        self.email = email
 
     def sign_in(self):
         print("logged in")
@@ -12,7 +8,7 @@ class Wizard(User):
     def __init__(self, name, power):
         self.name = name
         self.power = power
-        super().__init__(f'{name}@gmail.com')
+
 
     def attack(self):
         print(f"{self.name} attacks with power of {self.power}")
@@ -21,25 +17,18 @@ class Archer(User):
     def __init__(self, name, num_arrows):
         self.name = name
         self.num_arrows = num_arrows
-        super().__init__(f'{name}@gmail.com')
+
 
     def attack(self):
         print(f"{self.name} attacks with arrows:  {self.num_arrows}")
 
+    def run(self):
+        print(f"{self.name} runs fast")
 
+class HybridBorg(Wizard, Archer):
+    pass
 
-
-wizard1 = Wizard('Merlin', 50)
-
-archer1 = Archer('Robin', 30)
-
-# Example 1
-# def player_attach(char):
-#     char.attack()
-#
-# player_attach(wizard1)
-# player_attach(archer1)
-
-# Example 2
-for char in [wizard1, archer1]:
-    char.attack()
+hb1 = HybridBorg('Borgie', 50)
+print(hb1.run())
+print(hb1.attack())
+print(hb1.sign_in())
